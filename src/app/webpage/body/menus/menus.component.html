@@ -1,0 +1,32 @@
+<div [class.disabled]="show">
+  <h1>MENUS</h1>
+  <button *ngIf="user?.role === 'admin'" class="new-product" (click)="editAddProduct(true)">+ Insert New Product</button>
+  <div class="menus">
+    <div (click)="changePage('morning')" class="menu">
+      <p class="emoji"><strong>🍳</strong></p>
+      <div class="info">
+        <p class="menu-title">MONRING</p>
+        <p>This where you will find the morning menu</p>
+      </div>
+      <p class="time">8:00AM - 11:00AM</p>
+    </div>
+    <div (click)="changePage('menu')" class="menu">
+      <p class="emoji"><strong>🍽️</strong></p>
+      <div class="info">
+        <p class="menu-title">MENU</p>
+        <p>This where you will find the menu for the rest of the day</p>
+      </div>
+      <p class="time">11:00AM - 11:00PM</p>
+    </div>
+    <div (click)="changePage('drinks')" class="menu">
+      <p class="emoji"><strong>🥂</strong></p>
+      <div class="info">
+        <p class="menu-title">DRINKS</p>
+        <p>This where you will find all the drinks</p>
+      </div>
+      <p class="time">Until Closure</p>
+    </div>
+  </div>
+</div>
+
+<app-addproduct *ngIf="show" (closeEvent)="editAddProduct($event)" class="modal"></app-addproduct>

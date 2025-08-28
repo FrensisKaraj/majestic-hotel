@@ -1,0 +1,19 @@
+<div class="auth-form">
+  <form [ngStyle]="this.loginForm.controls['email'].valid && this.loginForm.controls['password'].valid ? { border: '1px solid green' } : { border: '1px solid rgb(104, 98, 98)' }" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <p class="title">{{ title }}</p>
+    <p>Email:</p>
+    <input type="email" placeholder="Put your Email here" formControlName="email" />
+    <p class="small-error" *ngIf="loginForm.controls['email'].touched && this.loginForm.controls['email'].value === ''">*Email required</p>
+    <p class="error" *ngIf="loginForm.controls['email'].touched && this.loginForm.controls['email'].value !== '' && this.loginForm.controls['email'].invalid">*Please enter a valid email</p>
+    <p>Password:</p>
+    <input type="password" placeholder="Put your Password here" formControlName="password" />
+    <p class="small-error" *ngIf="loginForm.controls['password'].touched && this.loginForm.controls['password'].value === ''">*Password required</p>
+    <p class="error" *ngIf="loginForm.controls['password'].touched && this.loginForm.controls['password'].value !== '' && this.loginForm.controls['password'].invalid">*Password must be at least 8 digits</p>
+    <button [disabled]="loginForm.invalid">{{ title }}</button>
+    <a (click)="changeForm()">
+      {{ description }}
+      <span class="link">here</span>
+      <span>!</span>
+    </a>
+  </form>
+</div>

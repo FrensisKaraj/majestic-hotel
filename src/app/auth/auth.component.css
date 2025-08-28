@@ -1,0 +1,100 @@
+.auth-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.auth-form form {
+  border-radius: 6%;
+  padding: 40px;
+}
+
+.auth-form input,
+button {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.auth-form input {
+  border: none;
+  background-color: rgb(45, 43, 43);
+  color: white;
+  outline: none;
+  height: 40px;
+  width: 300px;
+  padding: 10px;
+  font-size: 16px;
+}
+
+.auth-form input:focus {
+  outline: 1px solid orange;
+}
+
+.auth-form button {
+  position: relative;
+  display: block;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  background-color: orange;
+  color: black;
+  border: none;
+  border-radius: 7px;
+  height: 40px;
+  width: 120px;
+  cursor: pointer;
+  font-weight: 900;
+}
+
+.auth-form button:hover {
+  opacity: 0.9;
+}
+
+.auth-form button:active {
+  opacity: 0.8;
+}
+
+.auth-form button:disabled:hover::after {
+  content: "Complete the form first!";
+  position: absolute;
+  bottom: -16px;
+  left: 80px;
+  background-color: black;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.auth-form button:disabled {
+  background-color: grey;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.auth-form a {
+  cursor: pointer;
+  color: rgb(137, 92, 7);
+  text-decoration: none;
+}
+
+.title {
+  font-weight: bold;
+  font-size: 40px;
+  margin-top: 5px;
+  margin-bottom: 30px;
+  color: orange;
+}
+
+.link {
+  text-decoration: underline;
+}
+
+.small-error {
+  color: rgb(227, 227, 25);
+}
+
+.error {
+  color: red;
+}

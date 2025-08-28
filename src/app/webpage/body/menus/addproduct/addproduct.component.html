@@ -1,0 +1,37 @@
+<div>
+  <p class="close" (click)="closeAddProduct()">x</p>
+  <h1 *ngIf="!editMode">ADD NEW PRODUCT</h1>
+  <h1 *ngIf="editMode">EDIT PRODUCT</h1>
+  <form [formGroup]="productForm">
+    <p>Product Name:</p>
+    <input placeholder="Enter name" formControlName="name" />
+    <p>Image:</p>
+    <input placeholder="Enter image path" formControlName="image" />
+    <p>Description:</p>
+    <textarea placeholder="Enter description..." formControlName="description"></textarea>
+    <p>Price:</p>
+    <input placeholder="Enter price(not more then 2 digits after the decimal point)" formControlName="price" type="number" />
+    <p *ngIf="productForm.controls['price'].invalid && productForm.controls['price'].dirty && productForm.controls['price'].touched" class="error-2">*The price shouldn't be a negative number & if there is a decimal point there should be 1-2 numbers after the: '.'</p>
+    <p>Menu Type:</p>
+    <select formControlName="menu_type">
+      <option value="default" disabled hidden>Pick the menu type</option>
+      <option value="morning">Morning Menu</option>
+      <option value="menu">Menu</option>
+      <option value="drinks">Drinks</option>
+    </select>
+    <p>Product Type:</p>
+    <select formControlName="product_type">
+      <option value="default" disabled hidden>Pick the product type</option>
+      <option *ngIf="productForm.controls['menu_type'].value === 'morning' || productForm.controls['menu_type'].value === 'menu'" value="salad">Salad</option>
+      <option *ngIf="productForm.controls['menu_type'].value === 'morning' || productForm.controls['menu_type'].value === 'menu'" value="food">Food</option>
+      <option *ngIf="productForm.controls['menu_type'].value === 'morning' || productForm.controls['menu_type'].value === 'menu'" value="desert">Desert</option>
+      <option *ngIf="productForm.controls['menu_type'].value === 'drinks'" value="cocktail">Cocktail</option>
+      <option *ngIf="productForm.controls['menu_type'].value === 'drinks'" value="cold_drink">Cold Drink</option>
+      <option *ngIf="productForm.controls['menu_type'].value === 'drinks'" value="hot_drink">Hot Drink</option>
+    </select>
+    <p *ngIf="productForm.controls['menu_type'].value === 'default'" class="small-error">*Please select the menu type first</p>
+    <button *ngIf="!editMode" (click)="onSubmit()">Add Product</button>
+    <button *ngIf="editMode" (click)="onSubmit()">Edit Product</button>
+    <p *ngIf="wrongSubmit" class="error">*Please complete every field avalivable correctly</p>
+  </form>
+</div>

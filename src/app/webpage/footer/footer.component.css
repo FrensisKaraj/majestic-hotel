@@ -1,0 +1,44 @@
+.footer {
+  border-top: 1px solid whitesmoke;
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 40px;
+  background-color: rgb(28, 26, 26);
+  color: white;
+}
+
+img {
+  width: 20px;
+}
+
+.info {
+  display: inline;
+  margin-left: 10px;
+}
+
+.line {
+  display: flex;
+  align-items: center;
+}
+
+.left {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.footer-title {
+  font-size: 20px;
+  font-weight: bold;
+  color: orange;
+  margin-bottom: 10px;
+}
+
+.left-extra {
+  margin-top: 10px;
+  font-style: italic;
+  color: rgb(200, 200, 200);
+  line-height: 1.4;
+}

@@ -1,0 +1,45 @@
+<div [class.disabled]="showEditProduct">
+  <p *ngIf="salads.length > 0" class="category">-Salads</p>
+  <div *ngIf="salads.length > 0" class="grid">
+    <div class="menu-item" *ngFor="let product of salads">
+      <img [src]="product.image" alt="{{ product.name }}" />
+      <h2>{{ product.name }}</h2>
+      <p class="price">${{ product.price | number : "1.2-2" }}</p>
+      <p>{{ product.description }}</p>
+      <div *ngIf="user?.role === 'admin'" class="buttons">
+        <button (click)="onEdit(product.id)" class="edit">Edit</button>
+        <button (click)="onDelete(product.id)" class="delete">Delete</button>
+      </div>
+    </div>
+  </div>
+
+  <p *ngIf="foods.length > 0" class="category">-Foods</p>
+  <div *ngIf="foods.length > 0" class="grid">
+    <div class="menu-item" *ngFor="let product of foods">
+      <img [src]="product.image" alt="{{ product.name }}" />
+      <h2>{{ product.name }}</h2>
+      <p class="price">${{ product.price | number : "1.2-2" }}</p>
+      <p>{{ product.description }}</p>
+      <div *ngIf="user?.role === 'admin'" class="buttons">
+        <button (click)="onEdit(product.id)" class="edit">Edit</button>
+        <button (click)="onDelete(product.id)" class="delete">Delete</button>
+      </div>
+    </div>
+  </div>
+
+  <p *ngIf="deserts.length > 0" class="category">-Deserts</p>
+  <div *ngIf="deserts.length > 0" class="grid">
+    <div class="menu-item" *ngFor="let product of deserts">
+      <img [src]="product.image" alt="{{ product.name }}" />
+      <h2>{{ product.name }}</h2>
+      <p class="price">${{ product.price | number : "1.2-2" }}</p>
+      <p>{{ product.description }}</p>
+      <div *ngIf="user?.role === 'admin'" class="buttons">
+        <button (click)="onEdit(product.id)" class="edit">Edit</button>
+        <button (click)="onDelete(product.id)" class="delete">Delete</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-addproduct *ngIf="showEditProduct" class="modal"></app-addproduct>

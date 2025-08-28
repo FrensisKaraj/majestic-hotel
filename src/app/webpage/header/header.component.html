@@ -1,0 +1,15 @@
+<div class="header">
+  <div class="left">
+    <img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/8/8c/Logo_Villa_Hotel_Majestic.png">
+  </div>
+  <div class="middle">
+    <a routerLink="/home" routerLinkActive="active-link">Home</a>
+    <a routerLink="/rooms" routerLinkActive="active-link">Rooms</a>
+    <a routerLink="/menus" routerLinkActive="active-link">Menus</a>
+    <a routerLink="/reviews" routerLinkActive="active-link">Reviews</a>
+  </div>
+  <div class="right">
+    <a *ngIf="!loggedIn" routerLink="/auth">Login</a>
+    <a *ngIf="loggedIn" (click)="onLogout()">Logout</a>
+  </div>
+</div>

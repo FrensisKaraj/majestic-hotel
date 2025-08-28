@@ -1,0 +1,45 @@
+<div [class.disabled]="showEditProduct">
+  <p *ngIf="cocktails.length > 0" class="category">-Cocktails</p>
+  <div *ngIf="cocktails.length > 0" class="grid">
+    <div class="menu-item" *ngFor="let product of cocktails">
+      <img [src]="product.image" alt="{{ product.name }}" />
+      <h2>{{ product.name }}</h2>
+      <p class="price">${{ product.price | number : '1.2-2' }}</p>
+      <p>{{ product.description }}</p>
+      <div *ngIf="user?.role === 'admin'" class="buttons">
+        <button (click)="onEdit(product.id)" class="edit">Edit</button>
+        <button (click)="onDelete(product.id)" class="delete">Delete</button>
+      </div>
+    </div>
+  </div>
+
+  <p *ngIf="coldDrinks.length > 0" class="category">-Cold Drinks</p>
+  <div *ngIf="coldDrinks.length > 0" class="grid">
+    <div class="menu-item" *ngFor="let product of coldDrinks">
+      <img [src]="product.image" alt="{{ product.name }}" />
+      <h2>{{ product.name }}</h2>
+      <p class="price">${{ product.price | number : '1.2-2' }}</p>
+      <p>{{ product.description }}</p>
+      <div *ngIf="user?.role === 'admin'" class="buttons">
+        <button (click)="onEdit(product.id)" class="edit">Edit</button>
+        <button (click)="onDelete(product.id)" class="delete">Delete</button>
+      </div>
+    </div>
+  </div>
+
+  <p *ngIf="hotDrinks.length > 0" class="category">-Hot Drinks</p>
+  <div *ngIf="hotDrinks.length > 0" class="grid">
+    <div class="menu-item" *ngFor="let product of hotDrinks">
+      <img [src]="product.image" alt="{{ product.name }}" />
+      <h2>{{ product.name }}</h2>
+      <p class="price">${{ product.price | number : '1.2-2' }}</p>
+      <p>{{ product.description }}</p>
+      <div *ngIf="user?.role === 'admin'" class="buttons">
+        <button (click)="onEdit(product.id)" class="edit">Edit</button>
+        <button (click)="onDelete(product.id)" class="delete">Delete</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-addproduct *ngIf="showEditProduct" class="modal"></app-addproduct>

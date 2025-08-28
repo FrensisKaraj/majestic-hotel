@@ -1,0 +1,125 @@
+.reviews {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  grid-gap: 10px;
+  border-top: 1px solid rgb(104, 98, 98);
+  border-bottom: 1px solid rgb(104, 98, 98);
+  border-radius: 5px;
+  padding: 10px;
+
+  height: 500px;
+  overflow-y: auto;
+  scrollbar-color: orange;
+}
+
+.card {
+  padding: 7px;
+  position: relative;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  background-color: rgb(36, 34, 34);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+}
+
+button {
+  cursor: pointer;
+}
+
+.star-button {
+  border: none;
+  background: none;
+  margin-bottom: 10px;
+}
+
+.star {
+  width: 25px;
+  height: 25px;
+}
+
+.review {
+  display: flex;
+  justify-content: center;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  margin-top: 10px;
+}
+
+.review p {
+  margin-top: 0;
+  margin-bottom: 5px;
+}
+
+.title {
+  font-weight: bold;
+  margin-bottom: 17px !important;
+  font-size: 30px;
+  text-align: center;
+  color: orange;
+}
+
+.description {
+  color: rgb(243, 233, 233);
+}
+
+.submit {
+  display: block;
+  margin-top: 10px;
+  margin-bottom: 12px;
+  background-color: orange;
+  color: black;
+  border: none;
+  border-radius: 7px;
+  height: 40px;
+  width: 130px;
+  font-size: 15px;
+}
+
+.submit:hover {
+  opacity: 0.9;
+}
+
+.submit:active {
+  opacity: 0.8;
+}
+
+textarea {
+  resize: none;
+  width: 500px;
+  height: 250px;
+  outline-color: none;
+  background-color: rgb(45, 43, 43);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+  margin-top: 3px;
+}
+
+textarea:focus {
+  outline: 1px solid orange;
+}
+
+.delete {
+  position: absolute;
+  top: 8px;
+  right: 3px;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+.bin {
+  width: 15px;
+}
+
+.error {
+  color: red;
+}
+
+.revs {
+  font-weight: 600;
+  font-size: 20px;
+  margin-left: 7px;
+}

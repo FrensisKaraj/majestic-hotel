@@ -1,0 +1,28 @@
+<div class="review">
+  <form [formGroup]="reviewForm" (ngSubmit)="onSubmit()">
+    <p class="title">Leave Your Review</p>
+    <button *ngFor="let star of [1, 2, 3, 4, 5]" class="star-button" type="button" (click)="starClick(star)">
+      <img class="star" [src]="starValue >= star ? 'https://gallery.yopriceville.com/downloadfullsize/send/23204' : 'https://upload.wikimedia.org/wikipedia/commons/7/7a/Star-empty.png'" alt="Star Icon" />
+    </button>
+    <p class="description">Description:</p>
+    <textarea placeholder="Enter your review here..." formControlName="description"></textarea>
+    <button type="submit" class="submit">Submit</button>
+    <p *ngIf="submitWrong" class="error">*A star rating is required</p>
+  </form>
+</div>
+
+<p class="revs">-Reviews</p>
+<div class="reviews">
+  <div *ngFor="let review of reviews" class="card">
+    <button class="delete" *ngIf="review.user_id === user_id" (click)="deleteReview(review.id)">
+      <img class="bin" src="https://www.citypng.com/public/uploads/preview/rubbish-bin-basket-trash-white-icon-701751695034610kvijnfvyry.png" />
+    </button>
+    <p>{{ review.email }}</p>
+    <p>
+      <span *ngFor="let star of [1, 2, 3, 4, 5]">
+        <img class="star" [src]="star <= review.stars ? 'https://gallery.yopriceville.com/downloadfullsize/send/23204' : 'https://upload.wikimedia.org/wikipedia/commons/7/7a/Star-empty.png'" alt="Star Icon" />
+      </span>
+    </p>
+    <p>{{ review.description }}</p>
+  </div>
+</div>
