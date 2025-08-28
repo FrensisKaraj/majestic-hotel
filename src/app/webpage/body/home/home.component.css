@@ -75,3 +75,12 @@ h2 {
   border-radius: 6px;
   padding: 8px 12px;
 }
+
+.link {
+  text-align: center;
+  font-size: 18px;
+}
+
+.link2 {
+  color: orange;
+}

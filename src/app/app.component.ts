@@ -20,6 +20,6 @@ export class AppComponent implements OnInit{
 
     this.menusService.getMenus().subscribe();
 
-    alert("Please read the README.md file before browsing the page!")
+    alert("Please read the README.md file before browsing the page! (SCROLL DOWN ON HOME PAGE FOR THE LINK TO GITHUB REPOSITORY)")
   }
 }
