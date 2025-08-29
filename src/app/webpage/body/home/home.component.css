@@ -19,7 +19,8 @@ h2 {
 .photos {
   column-count: 3;
   column-gap: 5px;
-  width: 800px;
+  max-width: 800px;
+  width: 85%;
   margin: 0 auto;
   border-top: 1px solid orange;
   border-bottom: 1px solid orange;
